@@ -1,0 +1,77 @@
+@media (max-width: 768px) {
+	.header {
+		display: none;
+	}
+	.about_qfirst {
+		margin-top: 50px;
+	}
+	.move_menu_left {
+		display: none;
+		height: 100%;
+		width: 40%;
+		position: fixed;
+		top: 0;
+		z-index: 101;
+		opacity: 0.5;
+		background: black;
+	}
+	.move_menu {
+		display: block;
+	}
+	.padding_left50 {
+		padding-left: 0px;
+		margin: -20px;
+		margin-top: 10px;
+	}
+	.row.left_bar h2 {
+		width: 100%;
+	}
+	.about_bottom .about_share {
+		position: absolute;
+		bottom: 60px;
+	}
+	.about_share {
+		display: block;
+	}
+	.weibo {
+		background: url(../image/mobiweibo.png) no-repeat center center;
+		background-size: 100% 100%;
+	}
+	.weixin {
+		background: url(../image/mobiweixin.png) no-repeat center center;
+		background-size: 100% 100%;
+	}
+	.about_bottom p {
+		line-height: 1.5em;
+		margin-top: 10px;
+	}
+	.top_title_inner {
+		padding-left: 15px;
+	}
+	.about_right_li span {
+		display: none;
+	}
+	.about_right_li li {
+		font-size: 12px;
+	}
+	.about_pic img {
+		height: 220px;
+	}
+	.left_bar {
+		margin-top: 20px;
+	}
+}
+
+@media (min-width: 768px) {
+	.top_title_inner {
+		width: 1000px;
+	}
+	.container {
+		width: 1000px;
+		margin: 0 auto;
+		padding-top: 30px;
+	}
+	.top_title_inner {
+		width: 1000px;
+	}
+}
