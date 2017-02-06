@@ -3,7 +3,7 @@ var menu = {
 	'list': [{
 			'menu1': '首页',
 			'url': 'javascript:void(0)',
-			'htm': 'childpage/firstpage.html'
+			'htm': 'firstpage.html'
 		},
 
 		{

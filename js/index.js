@@ -31,7 +31,7 @@ function leftMenuClick() {
 		$('.top_title_inner .childChildMenu').text(t);
 
 		$(this).addClass('menuSelect').siblings().removeClass('menuSelect');
-		
+
 		leftMenuContent(menuIndex, index);
 
 	})
@@ -55,13 +55,10 @@ function childMenuGet() {
 
 		var index = $(this).index();
 		loadContend(index);
-		
+
 		//左边菜单第一项高亮
 		$('#menuChild1 li').eq(0).addClass('menuSelect');
-		//url hash改变
-//		var go = '';
-//		go = menu.list[index].htm;
-//		location.hash = go;
+
 	})
 }
 
@@ -69,7 +66,6 @@ function title2GetData() {
 	var title2Text = $('#currentMenu').text();
 	$('.childMenutitle a').text(title2Text);
 }
-
 
 //手机菜单的显示与隐藏
 function HideMenu() {
@@ -152,44 +148,42 @@ function getBannerData() {
 }
 
 function loadContend(i) {
-
 	var toptitle = menu.list;
-	
+	$.each(toptitle, function(item, key) {
+		if(i == item) {
+			toptitle = key.htm;
+		}
+	})
+
 	if(i == 0) {
 		$('#load_content').load('firstpage.html', function() {
 			$('#left_menu').hide();
 			$('.childMenutitle, .childChildMenu').hide();
 			$('#load_content').removeClass('col-lg-10').addClass('col-lg-12');
 		});
+	} else {
+		$('#load_content').load(toptitle, function() {
+			$('#left_menu').show();
+			$('.childMenutitle, .childChildMenu').show();
+			$('#load_content').removeClass('col-lg-12').addClass('col-lg-10');
+		});
 	}
-	
-	$.each(toptitle, function(item, key){
-		if(i==item){
-			toptitle = key.htm;
-		}
-	})
-	
-	$('#load_content').load(toptitle, function() {
-		$('#left_menu').show();
-		$('.childMenutitle, .childChildMenu').show();
-		$('#load_content').removeClass('col-lg-12').addClass('col-lg-10');
-	});
 
 }
 
 //点击左边菜单 load不同内容
-function leftMenuContent(currentMenu, currentChildMenu){
+function leftMenuContent(currentMenu, currentChildMenu) {
 	var html = menu.list;
-	$.each(html, function(item, key){
-		if(currentMenu==item){
+	$.each(html, function(item, key) {
+		if(currentMenu == item) {
 			html = key.menu2;
-			$.each(html, function(item1, key1){
-				if(currentChildMenu==item1){
-					html=key1.html;
+			$.each(html, function(item1, key1) {
+				if(currentChildMenu == item1) {
+					html = key1.html;
 				}
 			})
 		}
-		
+
 	});
 	$('#load_content').load(html);
 }
