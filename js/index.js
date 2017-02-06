@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
 	//内容部分不同的页面加载不同的内容
-	loadContend(0);
+	loadContent(0);
 
 	//用template渲染数据
 	GetMenuData();
@@ -22,11 +22,11 @@ $(document).ready(function() {
 })
 
 //点击左侧菜单后上面的title相应变化
-function leftMenuClick() {
+function leftMenuClick(){
 	$('.left_bar ul li').on('click', function() {
 		var index = $(this).index();
 		var menuIndex = $('#menu1 a.selected').index();
-		console.log(menuIndex);
+//		console.log(menuIndex);
 		var t = $(this).find('a').text();
 		$('.top_title_inner .childChildMenu').text(t);
 
@@ -51,10 +51,10 @@ function childMenuGet() {
 		var t2 = $('#menuChild1 a').eq(0).text();
 		$('.childChildMenu').text(t2);
 
-		leftMenuClick()
+		leftMenuClick();
 
 		var index = $(this).index();
-		loadContend(index);
+		loadContent(index);
 
 		//左边菜单第一项高亮
 		$('#menuChild1 li').eq(0).addClass('menuSelect');
@@ -120,25 +120,15 @@ function getChildMenuData() {
 
 }
 
-function getPicData() {
-	var picHtml = template('pic_about2', picData);
-	$('#pic_about1').append(picHtml);
-}
-
-function getXueShuData() {
-	var xueShuData = template('shuXueHtml1', xueshuData);
-	$('#shuXueHtml2').append(xueShuData);
-
-}
 
 function getBannerData() {
 	//处理banner数据
 	var currentClick = '';
 	var bannerDataAfter = '';
-	$('#menu1 a').click(function() {
+	$('#menu1 a').click(function(){
 		currentClick = $(this).index();
 		currentClick += 1;
-		$.each(bannerData.list, function(i, key) {
+		$.each(bannerData.list, function(i, key){
 			if(currentClick == key.currentPage) {
 				bannerDataAfter = key.src;
 			}
@@ -146,8 +136,8 @@ function getBannerData() {
 		$('#bannerHtml2 img').attr('src', bannerDataAfter);
 	})
 }
-
-function loadContend(i) {
+//头部菜单load不同内容
+function loadContent(i) {
 	var toptitle = menu.list;
 	$.each(toptitle, function(item, key) {
 		if(i == item) {
@@ -171,7 +161,7 @@ function loadContend(i) {
 
 }
 
-//点击左边菜单 load不同内容
+//左边菜单 load不同内容
 function leftMenuContent(currentMenu, currentChildMenu) {
 	var html = menu.list;
 	$.each(html, function(item, key) {
