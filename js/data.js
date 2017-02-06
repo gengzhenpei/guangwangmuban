@@ -2,20 +2,24 @@
 var menu = {
 	'list': [{
 			'menu1': '首页',
-			'url': 'javascript:void(0)'
+			'url': 'javascript:void(0)',
+			'htm': 'childpage/firstpage.html'
 		},
 
 		{
 			'menu1': '企业服务',
 			'url': 'javascript:void(0)',
+			'htm': 'childpage/qiye_1.html',
 			'menu2': [{
 					'name': '企业服务1',
-					'url': 'javascript:void(0)'
+					'url': 'javascript:void(0)',
+					'html': 'childpage/qiye_1.html'
 				},
 
 				{
 					'name': '企业服务2',
-					'url': 'javascript:void(0)'
+					'url': 'javascript:void(0)',
+					'html': 'childpage/qiye_2.html'
 				}
 			]
 		},
@@ -23,14 +27,17 @@ var menu = {
 		{
 			'menu1': '院校服务',
 			'url': 'javascript:void(0)',
+			'htm': 'childpage/yuanxiao_1.html',
 			'menu2': [{
 					'name': 'BIM院校服务',
-					'url': 'javascript:void(0)'
+					'url': 'javascript:void(0)',
+					'html': 'childpage/yuanxiao_1.html'
 				},
 
 				{
 					'name': '院校服务',
-					'url': 'javascript:void(0)'
+					'url': 'javascript:void(0)',
+					'html': 'childpage/yuanxiao_2.html'
 				}
 			]
 		},
@@ -38,14 +45,17 @@ var menu = {
 		{
 			'menu1': '个人服务',
 			'url': 'javascript:void(0)',
+			'htm': 'childpage/geren_1.html',
 			'menu2': [{
 					'name': 'BIM个人服务',
-					'url': 'javascript:void(0)'
+					'url': 'javascript:void(0)',
+					'html': 'childpage/geren_1.html'
 				},
 
 				{
 					'name': '个人服务',
-					'url': 'javascript:void(0)'
+					'url': 'javascript:void(0)',
+					'html': 'childpage/geren_2.html'
 				}
 			]
 		},
@@ -53,55 +63,52 @@ var menu = {
 		{
 			'menu1': '学习体验厅',
 			'url': 'javascript:void(0)',
+			'htm': 'childpage/tiyan_1.html',
 			'menu2': [{
 					'name': '学习体验厅',
-					'url': 'javascript:void(0)'
+					'url': 'javascript:void(0)',
+					'html': 'childpage/tiyan_1.html'
 				},
 
 				{
 					'name': '展厅环境位置',
-					'url': 'javascript:void(0)'
+					'url': 'javascript:void(0)',
+					'html': 'childpage/tiyan_2.html'
 				},
 
 				{
 					'name': '项目指导专家',
-					'url': 'javascript:void(0)'
+					'url': 'javascript:void(0)',
+					'html': 'childpage/tiyan_3.html'
+					
 				},
 
 				{
 					'name': '项目背景',
-					'url': 'javascript:void(0)'
-				},
-
-				{
-					'name': '理论高重大意义',
-					'url': 'javascript:void(0)'
-				},
-
-				{
-					'name': '企业参展',
-					'url': 'javascript:void(0)'
-				},
-
-				{
-					'name': '企业参展方式',
-					'url': 'javascript:void(0)'
+					'url': 'javascript:void(0)',
+					'html': 'childpage/tiyan_4.html'
+					
 				}
-
+				
 			]
 		},
 
 		{
 			'menu1': '学术交流',
 			'url': 'javascript:void(0)',
+			'htm': 'childpage/jiaoliu_1.html',
+			
 			'menu2': [{
 					'name': '学术交流',
-					'url': 'javascript:void(0)'
+					'url': 'javascript:void(0)',
+					'html': 'childpage/jiaoliu_1.html'
 				},
 
 				{
 					'name': '核心专家团队',
-					'url': 'javascript:void(0)'
+					'url': 'javascript:void(0)',
+					'html': 'childpage/jiaoliu_2.html'
+					
 				}
 			]
 		},
@@ -109,35 +116,26 @@ var menu = {
 		{
 			'menu1': '关于我们',
 			'url': 'javascript:void(0)',
+			'htm': 'childpage/about_1.html',
 			'menu2': [{
 					'name': '关于我们',
-					'url': 'javascript:void(0)'
+					'url': 'javascript:void(0)',
+					'html': 'childpage/about_1.html'
 				},
 
 				{
 					'name': '公司发展历程',
-					'url': 'javascript:void(0)'
+					'url': 'javascript:void(0)',
+					'html': 'childpage/about_2.html'
+					
 				},
 
 				{
 					'name': '公司资质',
-					'url': 'javascript:void(0)'
-				},
-
-				{
-					'name': '公司组织机构',
-					'url': 'javascript:void(0)'
-				},
-
-				{
-					'name': '公司战略布构',
-					'url': 'javascript:void(0)'
-				},
-
-				{
-					'name': '分支',
-					'url': 'javascript:void(0)'
-				},
+					'url': 'javascript:void(0)',
+					'html': 'childpage/about_3.html'
+					
+				}
 
 			]
 		}

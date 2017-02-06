@@ -4,10 +4,18 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/muban.css" />
 		<link rel="stylesheet" type="text/css" href="css/firstpage.css" />
 		<style type="text/css">
+			.fir_title {
+				width: 1030px;
+				margin: 0 auto;
+				margin-top: 30px;
+			}
+			
 			.first_page_body {
-				height: 1000px;
+				width: 100%;
+				height: auto;
 				background: #f2f2f2;
 			}
 		</style>
@@ -15,11 +23,37 @@
 
 	<body>
 		<div class="first_page_body" class="container">
-			<div class="row">
-				<div class="fir_title">
-					新闻资讯
+			<div class="row fir_title">
+				<div class="news_img float_left">
+					<img src="image/firstpage/homenewstitle.png" />
+				</div>
+
+				<div class="pre_img float_right">
+					<a href="javascript:void(0)" class="prev"></a>
+
+					<a href="javascript:void(0)" class="next"></a>
 				</div>
 			</div>
+
+			<div class="row">
+				<div class="col-lg-3 col-sm-12">
+					<h2>标题一</h2>
+					<p>内容一内容一内容一内容一内容一内容一</p>
+					<div class="more">
+						<img src="image/firstpage/newsmorebg.png" />
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-12">
+
+				</div>
+				<div class="col-lg-3 col-sm-12">
+
+				</div>
+				<div class="col-lg-3 col-sm-12">
+
+				</div>
+			</div>
+
 		</div>
 	</body>
 

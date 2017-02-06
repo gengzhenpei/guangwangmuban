@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	
+
 	//内容部分不同的页面加载不同的内容
 	loadContend(0);
 
@@ -24,10 +24,15 @@ $(document).ready(function() {
 //点击左侧菜单后上面的title相应变化
 function leftMenuClick() {
 	$('.left_bar ul li').on('click', function() {
+		var index = $(this).index();
+		var menuIndex = $('#menu1 a.selected').index();
+		console.log(menuIndex);
 		var t = $(this).find('a').text();
 		$('.top_title_inner .childChildMenu').text(t);
 
 		$(this).addClass('menuSelect').siblings().removeClass('menuSelect');
+		
+		leftMenuContent(menuIndex, index);
 
 	})
 }
@@ -47,9 +52,16 @@ function childMenuGet() {
 		$('.childChildMenu').text(t2);
 
 		leftMenuClick()
-		
+
 		var index = $(this).index();
 		loadContend(index);
+		
+		//左边菜单第一项高亮
+		$('#menuChild1 li').eq(0).addClass('menuSelect');
+		//url hash改变
+//		var go = '';
+//		go = menu.list[index].htm;
+//		location.hash = go;
 	})
 }
 
@@ -58,18 +70,6 @@ function title2GetData() {
 	$('.childMenutitle a').text(title2Text);
 }
 
-//左边菜单点击后高亮
-function LeftMenu() {
-	var b = $('.top_title_inner .childChildMenu').text();
-	var c = $('.left_bar ul li a');
-	$.each(c, function(i, key) {
-		var d = $(key).text();
-		if(d == b) {
-			var f = $(this)
-			f.parents('li').addClass('menuSelect').siblings().removeClass('menuSelect');
-		}
-	});
-}
 
 //手机菜单的显示与隐藏
 function HideMenu() {
@@ -95,7 +95,7 @@ function ErWeiMaShow() {
 }
 //初始化菜单
 function GetMenuData() {
-//	console.log(menu);
+	//	console.log(menu);
 	var html = template('menu', menu);
 
 	$('#menu1').append(html);
@@ -121,7 +121,6 @@ function getChildMenuData() {
 	var htmlChild = template('menuChild', menuSelect);
 
 	$('#menuChild1').append(htmlChild);
-	
 
 }
 
@@ -133,7 +132,7 @@ function getPicData() {
 function getXueShuData() {
 	var xueShuData = template('shuXueHtml1', xueshuData);
 	$('#shuXueHtml2').append(xueShuData);
-	
+
 }
 
 function getBannerData() {
@@ -152,22 +151,45 @@ function getBannerData() {
 	})
 }
 
-function loadContend(i){
-	var yingshe = {
-		0: null,
-		1: 'server_qiye.html',
-		2: 'server_yuanxiao.html',
-		3: 'server_geren.html',
-		4: 'zhanting.html',
-		5: 'jiaoliu.html',
-		6: 'about_content.html'
-	}
-	if(i==0){
-		$('#load_content').load('firstpage.html', function(){
+function loadContend(i) {
+
+	var toptitle = menu.list;
+	
+	if(i == 0) {
+		$('#load_content').load('firstpage.html', function() {
 			$('#left_menu').hide();
+			$('.childMenutitle, .childChildMenu').hide();
+			$('#load_content').removeClass('col-lg-10').addClass('col-lg-12');
 		});
 	}
-	$('#load_content').load(yingshe[i], function(){
+	
+	$.each(toptitle, function(item, key){
+		if(i==item){
+			toptitle = key.htm;
+		}
+	})
+	
+	$('#load_content').load(toptitle, function() {
 		$('#left_menu').show();
+		$('.childMenutitle, .childChildMenu').show();
+		$('#load_content').removeClass('col-lg-12').addClass('col-lg-10');
 	});
+
+}
+
+//点击左边菜单 load不同内容
+function leftMenuContent(currentMenu, currentChildMenu){
+	var html = menu.list;
+	$.each(html, function(item, key){
+		if(currentMenu==item){
+			html = key.menu2;
+			$.each(html, function(item1, key1){
+				if(currentChildMenu==item1){
+					html=key1.html;
+				}
+			})
+		}
+		
+	});
+	$('#load_content').load(html);
 }

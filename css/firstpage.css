@@ -1,5 +1,23 @@
 .fir_title{
-	height: 80px;
-	line-height: 80px;
-	font-size: 24px;
+	height: 90px;
+}
+.prev{
+	display: inline-block;
+	width: 28px;
+    height: 28px;
+	background: url(../image/firstpage/homenewsnp.jpg) no-repeat 0 0;
+}
+.next {
+	display: inline-block;
+    width: 28px;
+    height: 28px;
+    background: url(../image/firstpage/homenewsnp.jpg) no-repeat 0 -28px;
+}
+.news_img{
+	padding-top: 20px;
+	padding-bottom: 10px;
+	border-bottom: 2px solid #d81e2e;
+}
+.pre_img{
+	padding-top: 30px;
 }
